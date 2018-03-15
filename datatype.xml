@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<dataMapper id="1">
+<!-- Instruction
+在这里限定了从表的字段类型到java常用类型的对照，你也可以自行设定，规则如下：
+1.表的字段类型(dbType)一律大写，如MYSQL
+2.Java类型(javaType)一律按照java包和类规范书写，必须是全名（包+类）
+3.某些情况下需要转换为某个类型的数组类型，则直接在类名后面加"[]"即可，例如BLOB或者MEDIUMBLOB，对应于java.lang.Byte[]
+4.生成器不会检测类型的兼容性，你可以自行控制从而获得灵活性，此外生成器会检查javaType的有效性，如果遇到无效的javaType,不会生成属性类型，你可以在后期自行修正
+5.在某些场合，如javaType是List<>或者是外键的情况下，生成器尚不会处理，请自行完成O(∩_∩)O
+ -->
+	<!-- Number -->
+	<type dbType="INT" javaType="java.lang.Integer"/>
+	<type dbType="TINYINT" javaType="java.lang.Integer"/>
+	<type dbType="SMALLINT" javaType="java.lang.Integer"/>
+	<type dbType="MEDIUMINT" javaType="java.lang.Integer"/>
+	<type dbType="BIGINT" javaType="java.math.BigInteger"/>
+	<type dbType="FLOAT" javaType="java.lang.Float"/>
+	<type dbType="DOUBLE" javaType="java.lang.Double"/>
+	<type dbType="DECIMAL" javaType="java.math.BigDecimal"/>
+	<type dbType="BIT" javaType="java.lang.Boolean"/>
+	<type dbType="BOOL" javaType="java.lang.Boolean"/>
+	<type dbType="BOOLEAN" javaType="java.lang.Boolean"/>
+	<type dbType="ID" javaType="java.lang.Long"/>
+	<type dbType="BLOB" javaType="java.lang.Byte[]"/>
+	<type dbType="MEDIUMBLOB" javaType="java.lang.Byte[]"></type>
+	
+	<!-- Char -->
+	<type dbType="VARCHAR" javaType="java.lang.String"/>
+	<type dbType="CHAR" javaType="java.lang.String"/>
+	<type dbType="TEXT" javaType="java.lang.String"/>
+	<type dbType="MEDIUMTEXT" javaType="java.lang.String"></type>
+	
+	<!-- Date -->
+	<type dbType="Date" javaType="java.sql.Date"/>
+	<type dbType="TIME" javaType="java.sql.Time"/>
+	<type dbType="DATETIME" javaType="java.sql.Timestamp"/>
+	<type dbType="TIMESTAMP" javaType="java.sql.Timestamp"/>
+	<type dbType="YEAR" javaType="java.sql.Date"/>
+</dataMapper>

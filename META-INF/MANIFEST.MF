@@ -1,0 +1,5 @@
+Manifest-Version: 1.0
+Create-By: YuLong
+Main-Class: com.yu.autogenerator.executor.MainExecutor
+Class-Path: lib/dom4j-2.0.1.jar
+
