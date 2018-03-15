@@ -8,9 +8,9 @@ import com.yu.entitygenerator.io.TypeSourceWriter;
 import com.yu.entitygenerator.util.TimeLogger;
 
 /**
- * ÓÉMainExecutor´´½¨²¢Æô¶¯µÄ×ÓÏß³Ì£¬Ã¿¸ö×ÓÏß³Ì¸ºÔğ¶ÔÒ»¸ö±íºÍÀàĞÍ×ª»»²¢Éú³ÉÎÄ¼ş
+ * ç”±MainExecutoråˆ›å»ºå¹¶å¯åŠ¨çš„å­çº¿ç¨‹ï¼Œæ¯ä¸ªå­çº¿ç¨‹è´Ÿè´£å¯¹ä¸€ä¸ªè¡¨å’Œç±»å‹è½¬æ¢å¹¶ç”Ÿæˆæ–‡ä»¶
 * @author yl  
-* @version 1.0 2017Äê8ÔÂ30ÈÕ
+* @version 1.0 2017å¹´8æœˆ30æ—¥
 *    
 */
 public class SubExecutor extends Thread{
@@ -27,7 +27,7 @@ public class SubExecutor extends Thread{
 
 	@Override
 	public void run() {
-		TimeLogger.info("Æô¶¯Ïß³Ì"+this.getName());
+		TimeLogger.info("å¯åŠ¨çº¿ç¨‹"+this.getName());
 		BuilderMateHandler bmh = new BuilderMateHandler(table_Name, column_List);
 		TypeSourceWriter writer = new TypeSourceWriter();
 		writer.writeType(bmh.build(ResourceAcquirer.fieldPreview),bmh.getTypeName(),ResourceAcquirer.cover);

@@ -3,17 +3,17 @@ package com.yu.entitygenerator.type;
 import com.yu.entitygenerator.io.ResourceAcquirer;
 
 /**
- * ÊµÏÖÀàĞÍµ½×Ö¶ÎÀàĞÍ¶¨ÒåµÄ×ª»»
+ * å®ç°ç±»å‹åˆ°å­—æ®µç±»å‹å®šä¹‰çš„è½¬æ¢
 * @author yl  
-* @version 1.0 2017Äê8ÔÂ28ÈÕ
+* @version 1.0 2017å¹´8æœˆ28æ—¥
 *    
 */
 public class TypeHandler {
 	private boolean ByteORbyte = ResourceAcquirer.ByteORbyte;
 	
 	/**
-	 * ¸ù¾İÀàĞÍµÄÈ«Ãû·µ»Ø¶¨Òå¸ÃÀàĞÍµÄ×Ö·û´®£¬Èç¹ûÎª°ü×°Àà£¬Ôò×Ô¶¯»ñÈ¡²¢·µ»ØTYPEÊµÀı£¬·ñÔò·µ»ØSimpleName(°üº¬"[]"£¬Èç¹ûÓĞ)£¬
-	 * Èç¹û´¦Àí·¢ÉúÒâÍâ£¬·µ»Ø¿Õ°××Ö·û
+	 * æ ¹æ®ç±»å‹çš„å…¨åè¿”å›å®šä¹‰è¯¥ç±»å‹çš„å­—ç¬¦ä¸²ï¼Œå¦‚æœä¸ºåŒ…è£…ç±»ï¼Œåˆ™è‡ªåŠ¨è·å–å¹¶è¿”å›TYPEå®ä¾‹ï¼Œå¦åˆ™è¿”å›SimpleName(åŒ…å«"[]"ï¼Œå¦‚æœæœ‰)ï¼Œ
+	 * å¦‚æœå¤„ç†å‘ç”Ÿæ„å¤–ï¼Œè¿”å›ç©ºç™½å­—ç¬¦
 	 * @param qName
 	 * @return
 	 */

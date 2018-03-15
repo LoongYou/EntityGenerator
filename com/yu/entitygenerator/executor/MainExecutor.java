@@ -13,9 +13,9 @@ import com.yu.entitygenerator.io.TypeSourceWriter;
 import com.yu.entitygenerator.util.TimeLogger;
 
 /**
- * ×Ô¶¯Éú³ÉÆ÷µÄ³ÌĞòÖ´ĞĞÈë¿Ú
+ * è‡ªåŠ¨ç”Ÿæˆå™¨çš„ç¨‹åºæ‰§è¡Œå…¥å£
  * @author yl 
- * @version 1.0 2017Äê8ÔÂ30ÈÕ
+ * @version 1.0 2017å¹´8æœˆ30æ—¥
  * 
  */
 public class MainExecutor {
@@ -24,18 +24,18 @@ public class MainExecutor {
 		
 		ResourceAcquirer.initialization();
 		DBInfoHandler dbInfoHandler =  InfoHandlerFactory.getHandler(DBMS.MYSQL.value);
-		Objects.requireNonNull(dbInfoHandler, "DBInfoHandler´´½¨Ê§°Ü£¬Çë¼ì²éÊı¾İ¿âÀàĞÍÊÇ·ñÕıÈ·");
+		Objects.requireNonNull(dbInfoHandler, "DBInfoHandleråˆ›å»ºå¤±è´¥ï¼Œè¯·æ£€æŸ¥æ•°æ®åº“ç±»å‹æ˜¯å¦æ­£ç¡®");
 		List<String> table_List = (List<String>) dbInfoHandler.getTableList();
 		if(!ResourceAcquirer.auto){
-			TimeLogger.info("ÕıÔÚÖ´ĞĞÊÖ¶¯Ä£Ê½......");
-			//ÊÖ¶¯Ö´ĞĞ»áÔÚÉú³ÉjavaÎÄ¼şÇ°Ñ¯ÎÊ
+			TimeLogger.info("æ­£åœ¨æ‰§è¡Œæ‰‹åŠ¨æ¨¡å¼......");
+			//æ‰‹åŠ¨æ‰§è¡Œä¼šåœ¨ç”Ÿæˆjavaæ–‡ä»¶å‰è¯¢é—®
 			Scanner sc = new Scanner(System.in);
 			a:
 			for(String table_Name:table_List){
 				BuilderMateHandler buidler = new BuilderMateHandler(table_Name, (List<String[]>) dbInfoHandler.getTableInfo(table_Name));
 				TypeSourceWriter writer = new TypeSourceWriter();
 				String type_Body = buidler.build(ResourceAcquirer.fieldPreview);
-				TimeLogger.info("ÇëºË¶Ô±íºÍÔ¤ÀÀ¡£ÊÇ·ñÉú³É"+buidler.getTypeName()+".java?(Y/N,E:ÖÕÖ¹ÈÎÎñ¡£²»Çø·Ö´óĞ¡Ğ´)");
+				TimeLogger.info("è¯·æ ¸å¯¹è¡¨å’Œé¢„è§ˆã€‚æ˜¯å¦ç”Ÿæˆ"+buidler.getTypeName()+".java?(Y/N,E:ç»ˆæ­¢ä»»åŠ¡ã€‚ä¸åŒºåˆ†å¤§å°å†™)");
 				boolean b = true;
 				while(b){
 					String option = sc.nextLine();
@@ -43,15 +43,15 @@ public class MainExecutor {
 					case "y":
 					case "Y":writer.writeType(type_Body,buidler.getTypeName(),ResourceAcquirer.cover);b=false;break;
 					case "n":
-					case "N":TimeLogger.info("È¡ÏûÉú³É"+buidler.getTypeName()+".java");b=false;break;
+					case "N":TimeLogger.info("å–æ¶ˆç”Ÿæˆ"+buidler.getTypeName()+".java");b=false;break;
 					case "e":
-					case "E":TimeLogger.info("ÖÕÖ¹ÈÎÎñ");b=false;break a;
-					default:TimeLogger.info("ÊäÈëÃüÁî²»ÕıÈ·£ºY/N");
+					case "E":TimeLogger.info("ç»ˆæ­¢ä»»åŠ¡");b=false;break a;
+					default:TimeLogger.info("è¾“å…¥å‘½ä»¤ä¸æ­£ç¡®ï¼šY/N");
 					}
 				}
 			}
 		}else{
-			//×Ô¶¯Ö´ĞĞÊÇ¶à¸öÏß³Ì½øĞĞµÄ
+			//è‡ªåŠ¨æ‰§è¡Œæ˜¯å¤šä¸ªçº¿ç¨‹è¿›è¡Œçš„
 			Thread[] pool = new Thread[table_List.size()];
 			int i = 0;
 			for(String table_Name:table_List){
@@ -71,11 +71,11 @@ public class MainExecutor {
 					isAlive = false;
 				}
 				Thread.sleep(2000);
-				TimeLogger.info("µÈ´ıËùÓĞÏß³Ì½áÊø");	
+				TimeLogger.info("ç­‰å¾…æ‰€æœ‰çº¿ç¨‹ç»“æŸ");	
 			}
-			TimeLogger.info("Ïß³ÌÒÑ½áÊø");
+			TimeLogger.info("çº¿ç¨‹å·²ç»“æŸ");
 			pool = null;
-			TimeLogger.info("ÀàÒÑ´´½¨ºÃ£¬ÇëË¢ĞÂÏîÄ¿");			
+			TimeLogger.info("ç±»å·²åˆ›å»ºå¥½ï¼Œè¯·åˆ·æ–°é¡¹ç›®");			
 		}
 		dbInfoHandler.close();
 		dbInfoHandler = null;

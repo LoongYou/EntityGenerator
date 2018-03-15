@@ -14,14 +14,14 @@ import org.dom4j.io.SAXReader;
 import com.yu.entitygenerator.util.TimeLogger;
 
 /**
- * ÔÚ×Ô¶¯Éú³ÉÆ÷¿ªÊ¼ÈÎÎñÇ°£¬ÓÉ¸ÃÀàÊµÏÖÅäÖÃÎÄ¼şµÄ¶ÁÈ¡£¬ÒÔ¼°³õÊ¼»¯Ò»Ğ©¹«¹²µÄ¾²Ì¬µÄ³£Á¿¡£
+ * åœ¨è‡ªåŠ¨ç”Ÿæˆå™¨å¼€å§‹ä»»åŠ¡å‰ï¼Œç”±è¯¥ç±»å®ç°é…ç½®æ–‡ä»¶çš„è¯»å–ï¼Œä»¥åŠåˆå§‹åŒ–ä¸€äº›å…¬å…±çš„é™æ€çš„å¸¸é‡ã€‚
  * @author yl 
- * @version 1.0 2017Äê8ÔÂ31ÈÕ
+ * @version 1.0 2017å¹´8æœˆ31æ—¥
  * 
  */
 public class ResourceAcquirer {
 	
-	//ÕâĞ©ÊÇ¶ÔÓ¦ÓÚÅäÖÃÎÄ¼şµÄÌõÄ¿
+	//è¿™äº›æ˜¯å¯¹åº”äºé…ç½®æ–‡ä»¶çš„æ¡ç›®
 	public static String dbms;
 	public static String driver;
 	public static String url;
@@ -37,18 +37,18 @@ public class ResourceAcquirer {
 	public static boolean ByteORbyte;
 	public static String scan;
 	
-	//´Ódatatype.xmlÖĞ×ª»»²¢µÄµ½µÄÀàĞÍ¼¯ºÏ
+	//ä»datatype.xmlä¸­è½¬æ¢å¹¶çš„åˆ°çš„ç±»å‹é›†åˆ
 	public static Map<String,String> dataType = new HashMap<String,String>();
 	
 	
 	/**
-	 * ³õÊ¼»¯ËùÓĞÅäÖÃ
+	 * åˆå§‹åŒ–æ‰€æœ‰é…ç½®
 	 * @throws Exception
 	 */
 	public static void initialization() throws Exception{
 		
 			ResourceBundle rb = ResourceBundle.getBundle("entitygenerator");
-			TimeLogger.info("½âÎöÅäÖÃÏî");
+			TimeLogger.info("è§£æé…ç½®é¡¹");
 			
 			dbms = rb.getString("dbms");
 			driver = rb.getString("driver");
@@ -66,7 +66,7 @@ public class ResourceAcquirer {
 			scan = rb.getString("scan");
 			
 			
-			TimeLogger.info("³õÊ¼»¯Êı¾İÀàĞÍ");
+			TimeLogger.info("åˆå§‹åŒ–æ•°æ®ç±»å‹");
 			
 			SAXReader reader = new SAXReader();
 			Document document = reader.read(new File(System.getProperty("user.dir")+projectRoot+"datatype.xml"));
@@ -81,7 +81,7 @@ public class ResourceAcquirer {
 					//System.out.println(first+second);
 				}				
 			}
-			TimeLogger.info("-------------³õÊ¼»¯Íê³É-------------");
+			TimeLogger.info("-------------åˆå§‹åŒ–å®Œæˆ-------------");
 	}
 	
 	

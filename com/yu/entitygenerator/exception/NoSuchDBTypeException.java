@@ -7,6 +7,6 @@ public class NoSuchDBTypeException extends Exception{
 	private static final long serialVersionUID = 1L;
 
 	public NoSuchDBTypeException() {
-		System.out.println("ÕÒ²»µ½´ËÊı¾İ¿âÀàĞÍ");
+		System.out.println("æ‰¾ä¸åˆ°æ­¤æ•°æ®åº“ç±»å‹");
 	}
 }

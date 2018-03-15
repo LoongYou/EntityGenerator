@@ -21,13 +21,13 @@ public class MySqlHandler extends DBInfoHandler{
 			Class.forName("com.mysql.jdbc.Driver");
 			conn = DriverManager.getConnection(ResourceAcquirer.url+ResourceAcquirer.param,ResourceAcquirer.username,ResourceAcquirer.password);
 			stm = conn.createStatement();
-			TimeLogger.info("ÒÑÁ¬½Óµ½Êı¾İ¿â"+ResourceAcquirer.url);
+			TimeLogger.info("å·²è¿æ¥åˆ°æ•°æ®åº“"+ResourceAcquirer.url);
 		} catch (ClassNotFoundException e) {
 			e.printStackTrace();
-			TimeLogger.info("ÕÒ²»µ½Êı¾İ¿âÇı¶¯");
+			TimeLogger.info("æ‰¾ä¸åˆ°æ•°æ®åº“é©±åŠ¨");
 		} catch (SQLException e) {
 			e.printStackTrace();
-			TimeLogger.info("ÎŞ·¨Á¬½Óµ½Êı¾İ¿â");
+			TimeLogger.info("æ— æ³•è¿æ¥åˆ°æ•°æ®åº“");
 		}
 	}
 	
@@ -39,16 +39,16 @@ public class MySqlHandler extends DBInfoHandler{
 			Object[] params = {dbName};
 			String sql = null;
 			if(ResourceAcquirer.scan.equals(DBMS.BOTH.value)){
-				TimeLogger.info("É¨Ãè±íºÍÊÓÍ¼");
+				TimeLogger.info("æ‰«æè¡¨å’Œè§†å›¾");
 				sql = DBMS.MYSQL_SHOWTABLE.value;
 			}
 			if(ResourceAcquirer.scan.equals(DBMS.TABLE.value)){
-				TimeLogger.info("½öÉ¨Ãè±í");
+				TimeLogger.info("ä»…æ‰«æè¡¨");
 				sql = MessageFormat.format(DBMS.MYSQL_GET_TABLES.value, params);
 				System.out.println(sql);
 			}
 			if(ResourceAcquirer.scan.equals(DBMS.VIEW.value)){
-				TimeLogger.info("½öÉ¨ÃèÊÓÍ¼");
+				TimeLogger.info("ä»…æ‰«æè§†å›¾");
 				sql = MessageFormat.format(DBMS.MYSQL_GET_VIEWS.value, params);
 			}
 			ResultSet rs =  stm.executeQuery(sql);
@@ -66,7 +66,7 @@ public class MySqlHandler extends DBInfoHandler{
  
 	@Override
 	public synchronized List<String[]> getTableInfo(String table_Name) {
-		TimeLogger.info("½âÎö±í£º"+table_Name);
+		TimeLogger.info("è§£æè¡¨ï¼š"+table_Name);
 		String [] tempRow = null;
 		List<String[]> table_Columns = new ArrayList<String[]>();
 		try {
@@ -85,7 +85,7 @@ public class MySqlHandler extends DBInfoHandler{
 		} catch (SQLException e) {
 			e.printStackTrace();
 		}
-		//TimeLogger.info("½âÎöÍê³É£º"+table_Name);
+		//TimeLogger.info("è§£æå®Œæˆï¼š"+table_Name);
 		return table_Columns;
 	}
 
@@ -107,7 +107,7 @@ public class MySqlHandler extends DBInfoHandler{
 				e.printStackTrace();
 			}
 		}
-		TimeLogger.info("statementºÍconnectionÒÑ¹Ø±Õ");
+		TimeLogger.info("statementå’Œconnectionå·²å…³é—­");
 	}
 	
 	

@@ -8,11 +8,11 @@ import com.yu.entitygenerator.type.TypeHandler;
 import com.yu.entitygenerator.util.TimeLogger;
 
 /**
- * ´ËÀàÌá¹©¹¹½¨ÊµÌåÀàÊôĞÔºÍ·½·¨µÄ¹¦ÄÜ£¬µ«²»°üÀ¨Ğ´ÈëÎÄ¼ş¹¦ÄÜ£¬
- * ½¨ÒéÔÚµ÷ÓÃÆäbuildEntity·½·¨ºó£¬ÊÍ·Å¸ÃÀà¶ÔÏó²¢ÖØĞÂ´´½¨£¬ÈçĞè¸´ÓÃ¡£
- * ÔÚ¶àÏß³ÌÏÂÊÇ²»°²È«µÄ£¬Ó¦µ±±ÜÃâ¶à¸öÏß³ÌÍ¬Ê±²Ù×÷¸Ã¶ÔÏó
+ * æ­¤ç±»æä¾›æ„å»ºå®ä½“ç±»å±æ€§å’Œæ–¹æ³•çš„åŠŸèƒ½ï¼Œä½†ä¸åŒ…æ‹¬å†™å…¥æ–‡ä»¶åŠŸèƒ½ï¼Œ
+ * å»ºè®®åœ¨è°ƒç”¨å…¶buildEntityæ–¹æ³•åï¼Œé‡Šæ”¾è¯¥ç±»å¯¹è±¡å¹¶é‡æ–°åˆ›å»ºï¼Œå¦‚éœ€å¤ç”¨ã€‚
+ * åœ¨å¤šçº¿ç¨‹ä¸‹æ˜¯ä¸å®‰å…¨çš„ï¼Œåº”å½“é¿å…å¤šä¸ªçº¿ç¨‹åŒæ—¶æ“ä½œè¯¥å¯¹è±¡
  * @author yl 
- * @version 1.0 2017Äê8ÔÂ27ÈÕ
+ * @version 1.0 2017å¹´8æœˆ27æ—¥
  * 
  */
 public class ClassBuilder {
@@ -45,7 +45,7 @@ public class ClassBuilder {
 	
 	
 	/**
-	 * Èç¹û±íÃûÊÇSYS_userĞÎÊ½µÄ£¬Ôò»áÈ¡µÃuser²¢ÇÒÊ××ÖÄ¸´óĞ´User
+	 * å¦‚æœè¡¨åæ˜¯SYS_userå½¢å¼çš„ï¼Œåˆ™ä¼šå–å¾—userå¹¶ä¸”é¦–å­—æ¯å¤§å†™User
 	 * @param table_Name
 	 * @return
 	 */
@@ -64,27 +64,27 @@ public class ClassBuilder {
 	}
 	
 	/**
-	 * Íê³ÉÒ»¸öÊµÌåÀàÖĞÊôĞÔ¡¢getter¡¢setterºÍ°üµÄ¶¨Òå£¬ÔÚ×î³õËü»á´´½¨¶ÔÓ¦µÄ°ü
+	 * å®Œæˆä¸€ä¸ªå®ä½“ç±»ä¸­å±æ€§ã€getterã€setterå’ŒåŒ…çš„å®šä¹‰ï¼Œåœ¨æœ€åˆå®ƒä¼šåˆ›å»ºå¯¹åº”çš„åŒ…
 	 * @param table_Name
 	 * @return
 	 */
 	public String buildEntity(String table_Name){
 		buildEntityPackage();
 		type_Name = convertTypeName(table_Name);
-		TimeLogger.info("¿ªÊ¼¹¹½¨ÀàĞÍ£º"+type_Name);
+		TimeLogger.info("å¼€å§‹æ„å»ºç±»å‹ï¼š"+type_Name);
 		typeContent.append("public class ").append(type_Name).append("{\n");
 		typeContent.append("    \n");
 		typeContent.append(fieldContent+"\n");
 		typeContent.append(methodContent+"\n");
 		typeContent.append("}");
 		typeContent.insert(0, "package "+entityPackage.replaceAll("/", ".")+";\n\n");
-		typeContent.insert(typeContent.indexOf("public class")-1,"\n\n/**\n * @author auto-generator\n * \n */\n");
-		TimeLogger.info("ÀàĞÍ¹¹½¨Íê³É£º"+type_Name);
+		typeContent.insert(typeContent.indexOf("public class")-1,"\n\n/**\n * @author entity-generator\n * \n */\n");
+		TimeLogger.info("ç±»å‹æ„å»ºå®Œæˆï¼š"+type_Name);
 		return typeContent.toString();
 	}
 	
 	/**
-	 * ¹¹½¨²¢·µ»ØÒ»¸öÊôĞÔĞĞ¼°Æä¶ÔÓ¦µÄsetterºÍgetter·½·¨,¿ÉÍ¨¹ıÖØ¸´µ÷ÓÃ£¬×Ô¶¯Æ´½Óµ½ÉÏÒ»ÌõÊôĞÔºóÃæ
+	 * æ„å»ºå¹¶è¿”å›ä¸€ä¸ªå±æ€§è¡ŒåŠå…¶å¯¹åº”çš„setterå’Œgetteræ–¹æ³•,å¯é€šè¿‡é‡å¤è°ƒç”¨ï¼Œè‡ªåŠ¨æ‹¼æ¥åˆ°ä¸Šä¸€æ¡å±æ€§åé¢
 	 * @param column_Name
 	 * @param Column_comment
 	 * @param Column_Type
@@ -100,7 +100,7 @@ public class ClassBuilder {
 	}
 	
 	/**
-	 * ¹¹½¨²¢·µ»ØÒ»¶Ôsetter¡¢getter,¿ÉÍ¨¹ıÖØ¸´µ÷ÓÃ£¬×Ô¶¯Æ´½Óµ½ÉÏÒ»¶Ô·½·¨ºóÃæ
+	 * æ„å»ºå¹¶è¿”å›ä¸€å¯¹setterã€getter,å¯é€šè¿‡é‡å¤è°ƒç”¨ï¼Œè‡ªåŠ¨æ‹¼æ¥åˆ°ä¸Šä¸€å¯¹æ–¹æ³•åé¢
 	 * @param column_Name
 	 * @param field_Type
 	 * @return
@@ -119,7 +119,7 @@ public class ClassBuilder {
 	}
 	
 	/**
-	 * ¸ù¾İ±í×Ö¶ÎÀàĞÍ×ª»¯ÎªjavaÀàĞÍ£¬Èç¹ûÔÚxmlÎÄ¼şÖĞÃ»ÓĞÉèÖÃ¶ÔÓ¦µÄjavaÀàĞÍ£¬·µ»Ø¿Õ×Ö·û´®£¬¸Ã·½·¨»áÍ¬Ê±½«lang°üÒÔÍâµÄÀàĞÍµ¼Èëµ½ÀàµÄÍ·²¿
+	 * æ ¹æ®è¡¨å­—æ®µç±»å‹è½¬åŒ–ä¸ºjavaç±»å‹ï¼Œå¦‚æœåœ¨xmlæ–‡ä»¶ä¸­æ²¡æœ‰è®¾ç½®å¯¹åº”çš„javaç±»å‹ï¼Œè¿”å›ç©ºå­—ç¬¦ä¸²ï¼Œè¯¥æ–¹æ³•ä¼šåŒæ—¶å°†langåŒ…ä»¥å¤–çš„ç±»å‹å¯¼å…¥åˆ°ç±»çš„å¤´éƒ¨
 	 * @param Column_Type
 	 * @return
 	 */
@@ -131,7 +131,7 @@ public class ClassBuilder {
 		String type = temp.toUpperCase();
 		if(dataType.containsKey(type)){
 			String qName = dataType.get(type);
-			if(qName.contains("java.lang.")||qName.contains("com.yu.autogenerator.type")){	
+			if(qName.contains("java.lang.")||qName.contains("com.yu.entitygenerator.type")){	
 				return typeHandler.convert(qName);
 			}else{
 				String importTag = "import "+qName+";\n";
@@ -146,14 +146,14 @@ public class ClassBuilder {
 	}
 	
 	/**
-	 * ´´½¨ÊµÌåÀàµÄ°ü
+	 * åˆ›å»ºå®ä½“ç±»çš„åŒ…
 	 * @return
 	 */
 	public void buildEntityPackage(){
 		String packagePath = System.getProperty("user.dir")+rootEntityPackage;
 		File file = new File(packagePath);
 		if(!file.exists()){
-			TimeLogger.info("´´½¨°üÂ·¾¶"+packagePath);
+			TimeLogger.info("åˆ›å»ºåŒ…è·¯å¾„"+packagePath);
 			file.mkdirs();
 		}
 	}

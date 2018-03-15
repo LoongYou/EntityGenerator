@@ -3,9 +3,9 @@ package com.yu.entitygenerator.datasource;
 import java.util.List;
 
 /**
- * Õâ¸öÊÇËùÓĞhandlerµÄ³éÏó¸¸Àà£¬ÊµÏÖÁËDataSourceInfo½Ó¿ÚµÄ·½·¨µ«¶¼ÊÇ¿ÕµÄ
+ * è¿™ä¸ªæ˜¯æ‰€æœ‰handlerçš„æŠ½è±¡çˆ¶ç±»ï¼Œå®ç°äº†DataSourceInfoæ¥å£çš„æ–¹æ³•ä½†éƒ½æ˜¯ç©ºçš„
  * @author yl 
- * @version 1.0 2017Äê8ÔÂ31ÈÕ
+ * @version 1.0 2017å¹´8æœˆ31æ—¥
  * 
  */
 public abstract class DBInfoHandler implements DataSourceInfo{

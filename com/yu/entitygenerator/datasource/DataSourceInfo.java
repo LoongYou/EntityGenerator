@@ -4,14 +4,14 @@ import java.util.List;
 
 public interface DataSourceInfo {
 	
-	/** »ñÈ¡Êı¾İ¿âĞÅÏ¢ */
+	/** è·å–æ•°æ®åº“ä¿¡æ¯ */
 	void getDataBaseInfo();
-	/** »ñÈ¡±íĞÅÏ¢ */
+	/** è·å–è¡¨ä¿¡æ¯ */
 	void getTableInfo();
-	/** »ñÈ¡±í¶ÓÁĞ */
+	/** è·å–è¡¨é˜Ÿåˆ— */
 	List<?> getTableList();
-	/** »ñÈ¡±íĞÅÏ¢ ·µ»Ø×Ö¶Î¼¯ºÏ */
+	/** è·å–è¡¨ä¿¡æ¯ è¿”å›å­—æ®µé›†åˆ */
 	List<?> getTableInfo(String table_Name);
-	/** ¹Ø±ÕÊı¾İ¿âÁ¬½Ó */
+	/** å…³é—­æ•°æ®åº“è¿æ¥ */
 	void close();
 }

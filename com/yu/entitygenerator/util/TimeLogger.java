@@ -6,6 +6,7 @@ import java.util.Date;
 /**
  * 一个简单包装进度信息输出控制台的工具，因暂时没有需要写入日志文件，仅输出控制台
  * @author yl 
+ * @version 1.0 2017年8月31日
  * 
  */
 public class TimeLogger {

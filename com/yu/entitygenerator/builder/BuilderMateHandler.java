@@ -3,9 +3,9 @@ package com.yu.entitygenerator.builder;
 import java.util.List;
 
 /**
- * ¸ÃÀàÓÃÓÚÅäºÏÍ¨¹ıhandler·½Ê½Ìá¹©µÄ±íĞÅÏ¢À´¹¹½¨Àà
+ * è¯¥ç±»ç”¨äºé…åˆé€šè¿‡handleræ–¹å¼æä¾›çš„è¡¨ä¿¡æ¯æ¥æ„å»ºç±»
 * @author yl  
-* @version 1.0 2017Äê8ÔÂ27ÈÕ
+* @version 1.0 2017å¹´8æœˆ27æ—¥
 *    
 */
 public class BuilderMateHandler {
@@ -26,8 +26,8 @@ public class BuilderMateHandler {
 
 
 	/**
-	 * µ÷ÓÃ¸Ã·½·¨»á¹¹½¨Íê³ÉÒ»¸öÍêÕûµÄÀàµÄÄÚÈİ
-	 * @param isUsePreview ÊÇ·ñÊä³öÊôĞÔÔ¤ÀÀ
+	 * è°ƒç”¨è¯¥æ–¹æ³•ä¼šæ„å»ºå®Œæˆä¸€ä¸ªå®Œæ•´çš„ç±»çš„å†…å®¹
+	 * @param isUsePreview æ˜¯å¦è¾“å‡ºå±æ€§é¢„è§ˆ
 	 */
 	public String build(boolean isUsePreview) {
 		builder = new ClassBuilder();

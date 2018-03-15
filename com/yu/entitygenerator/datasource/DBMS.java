@@ -1,9 +1,9 @@
 package com.yu.entitygenerator.datasource;
 
 /**
- * ¸ÃÃ¶¾Ù¶¨ÒåÁËÊı¾İ¿âÀàĞÍºÍ¶ÔÓ¦µÄ²Ù×÷sql
+ * è¯¥æšä¸¾å®šä¹‰äº†æ•°æ®åº“ç±»å‹å’Œå¯¹åº”çš„æ“ä½œsql
  * @author yl 
- * @version 1.0 2017Äê8ÔÂ31ÈÕ
+ * @version 1.0 2017å¹´8æœˆ31æ—¥
  * 
  */
 public enum DBMS {

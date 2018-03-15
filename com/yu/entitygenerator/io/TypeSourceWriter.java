@@ -10,9 +10,9 @@ import java.io.OutputStream;
 import com.yu.entitygenerator.util.TimeLogger;
 
 /**
- * ÊµÏÖjavaÀàĞÍÎÄ¼şµÄĞ´Èë
+ * å®ç°javaç±»å‹æ–‡ä»¶çš„å†™å…¥
 * @author yl  
-* @version 1.0 2017Äê8ÔÂ29ÈÕ
+* @version 1.0 2017å¹´8æœˆ29æ—¥
 *    
 */
 public class TypeSourceWriter {
@@ -20,10 +20,10 @@ public class TypeSourceWriter {
 	private String rootEntityPackage = ResourceAcquirer.rootEntityPackage;
 	
 	/**
-	 * ½«ÀàĞÍĞ´µ½ÎÄ¼ş£¬Èç¹ûÀàĞÍÃû³Æ¹ı³¤»áÅ×³öArrayIndexOutOfBoundsException£¬¸Ã·½·¨ÖĞÊ¹ÓÃµÄ»º³å´óĞ¡Îª4k
+	 * å°†ç±»å‹å†™åˆ°æ–‡ä»¶ï¼Œå¦‚æœç±»å‹åç§°è¿‡é•¿ä¼šæŠ›å‡ºArrayIndexOutOfBoundsExceptionï¼Œè¯¥æ–¹æ³•ä¸­ä½¿ç”¨çš„ç¼“å†²å¤§å°ä¸º4k
 	 * @param type_Body
 	 * @param type_Name
-	 * @param isCover ÊÇ·ñÖ´ĞĞ¸²¸ÇÒÑÓĞÎÄ¼ş
+	 * @param isCover æ˜¯å¦æ‰§è¡Œè¦†ç›–å·²æœ‰æ–‡ä»¶
 	 * @exception ArrayIndexOutOfBoundsException
 	 */
 	public void writeType(String type_Body,String type_Name,boolean isCover){
@@ -35,17 +35,17 @@ public class TypeSourceWriter {
 			//System.out.print(System.getProperty("user.dir")+rootEntityPackage+type_Name+".java");
 			File file = new File(System.getProperty("user.dir")+rootEntityPackage+type_Name+".java");
 			if(file.exists()&&!isCover){
-				TimeLogger.info(type_Name+".javaÒÑ´æÔÚ,²»½øĞĞ¸²¸Ç");				
+				TimeLogger.info(type_Name+".javaå·²å­˜åœ¨,ä¸è¿›è¡Œè¦†ç›–");				
 			}else if((file.exists()&&isCover)||!file.exists()){
 				if(file.exists()&&isCover){
-					TimeLogger.info(type_Name+".javaÒÑ´æÔÚ,½øĞĞ¸²¸Ç");						
+					TimeLogger.info(type_Name+".javaå·²å­˜åœ¨,è¿›è¡Œè¦†ç›–");						
 				}
 				try {
 					out = new FileOutputStream(file);
 					buffer = new BufferedOutputStream(out,4096);
 					byte[] b = type_Body.getBytes();
 					buffer.write(b);
-					TimeLogger.info(type_Name+".javaÒÑÉú³É");	
+					TimeLogger.info(type_Name+".javaå·²ç”Ÿæˆ");	
 				} catch (FileNotFoundException e1) {
 					e1.printStackTrace();
 				}catch (IOException e) {

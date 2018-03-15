@@ -1,9 +1,9 @@
 package com.yu.entitygenerator.datasource;
 
 /**
- * ÕâÊÇÒ»¸ö¾²Ì¬¹¤³§Ä£Ê½£¬¸Ã¹¤³§Àà¸ù¾İ¸ø¶¨µÄÊı¾İ¿âÀàĞÍ´´½¨handler
+ * è¿™æ˜¯ä¸€ä¸ªé™æ€å·¥å‚æ¨¡å¼ï¼Œè¯¥å·¥å‚ç±»æ ¹æ®ç»™å®šçš„æ•°æ®åº“ç±»å‹åˆ›å»ºhandler
  * @author yl 
- * @version 1.0 2017Äê8ÔÂ31ÈÕ
+ * @version 1.0 2017å¹´8æœˆ31æ—¥
  * 
  */
 public class InfoHandlerFactory {
