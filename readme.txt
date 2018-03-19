@@ -15,7 +15,7 @@ entitygenerator是一个用于快速创建ORM中实体类文件的工具，为�
 1、目前仅支持mysql数据库，如果你用mybatis推荐使用。
 2、确保entitygenerator.properties和datatype.xml这两个文件置于项目包路径。
 3、根据你的项目修改上述两个文件，内有说明。
-4、在项目中调用（或者直接执行）com.yu.generator.MainExecutor.main(new String[]{})即可开始生成任务。
+4、在项目中调用（或者放在项目根目录直接执行）com.yu.generator.MainExecutor.main(new String[]{})即可开始生成任务。
 5、具有手动和自动模式，执行过程的信息会输出到控制台进行互动。
 
 配置项：
