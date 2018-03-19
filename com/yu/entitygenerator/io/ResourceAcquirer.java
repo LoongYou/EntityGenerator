@@ -30,7 +30,9 @@ public class ResourceAcquirer {
 	public static String password;
 	public static String projectRoot;
 	public static String entityPackage;
+	public static String dictPackage;
 	public static String rootEntityPackage;
+	public static String rootDictPackage;
 	public static boolean auto;
 	public static boolean cover;
 	public static boolean fieldPreview;
@@ -57,8 +59,10 @@ public class ResourceAcquirer {
 			username = rb.getString("username");
 			password = rb.getString("password");
 			entityPackage = rb.getString("entityPackage");
-			projectRoot = "\\"+rb.getString("projectRoot")+"\\"; 
-			rootEntityPackage = "\\"+projectRoot+"\\"+entityPackage+"\\";
+			dictPackage = rb.getString("dictPackage");
+			projectRoot = "/"+rb.getString("projectRoot")+"/"; 
+			rootEntityPackage = "/"+projectRoot+"/"+entityPackage+"/";
+			rootDictPackage = "/"+projectRoot+"/"+dictPackage+"/";
 			auto = Boolean.valueOf(rb.getString("auto"));
 			cover = Boolean.valueOf(rb.getString("cover"));
 			fieldPreview = Boolean.valueOf(rb.getString("fieldPreview"));

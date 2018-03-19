@@ -30,7 +30,7 @@ public class SubExecutor extends Thread{
 		TimeLogger.info("启动线程"+this.getName());
 		BuilderMateHandler bmh = new BuilderMateHandler(table_Name, column_List);
 		TypeSourceWriter writer = new TypeSourceWriter();
-		writer.writeType(bmh.build(ResourceAcquirer.fieldPreview),bmh.getTypeName(),ResourceAcquirer.cover);
+		writer.writeType(bmh.build(ResourceAcquirer.fieldPreview),bmh.getTypeName(),ResourceAcquirer.cover,false,".java");
 		bmh = null;
 		writer = null;
 	}

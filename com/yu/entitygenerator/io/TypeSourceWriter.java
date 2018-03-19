@@ -17,7 +17,6 @@ import com.yu.entitygenerator.util.TimeLogger;
 */
 public class TypeSourceWriter {
 	
-	private String rootEntityPackage = ResourceAcquirer.rootEntityPackage;
 	
 	/**
 	 * 将类型写到文件，如果类型名称过长会抛出ArrayIndexOutOfBoundsException，该方法中使用的缓冲大小为4k
@@ -26,14 +25,16 @@ public class TypeSourceWriter {
 	 * @param isCover 是否执行覆盖已有文件
 	 * @exception ArrayIndexOutOfBoundsException
 	 */
-	public void writeType(String type_Body,String type_Name,boolean isCover){
+	public void writeType(String type_Body,String type_Name,boolean isCover,boolean isDict,String suffix){
 		if(type_Name.length()>100){
 			throw new ArrayIndexOutOfBoundsException();
 		}
 		OutputStream out;
 		BufferedOutputStream buffer = null;
 			//System.out.print(System.getProperty("user.dir")+rootEntityPackage+type_Name+".java");
-			File file = new File(System.getProperty("user.dir")+rootEntityPackage+type_Name+".java");
+			String path = System.getProperty("user.dir")+ResourceAcquirer.rootEntityPackage+type_Name+suffix;
+			if(isDict)path = System.getProperty("user.dir")+ResourceAcquirer.rootDictPackage+type_Name+suffix;
+			File file = new File(path);
 			if(file.exists()&&!isCover){
 				TimeLogger.info(type_Name+".java已存在,不进行覆盖");				
 			}else if((file.exists()&&isCover)||!file.exists()){

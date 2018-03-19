@@ -3,7 +3,7 @@ package com.yu.entitygenerator.builder;
 import java.util.List;
 
 /**
- * 该类用于配合通过handler方式提供的表信息来构建类
+ * 
 * @author yl  
 * @version 1.0 2017年8月27日
 *    
@@ -45,5 +45,7 @@ public class BuilderMateHandler {
 	public String getTypeName(){
 		return builder.getType_Name();
 	}
+
+	
 	
 }
