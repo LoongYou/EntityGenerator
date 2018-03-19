@@ -11,7 +11,7 @@ entitygenerator是一个用于快速创建ORM中实体类文件的工具，为�
 
 
 版本 1.0
-依赖：依赖dom4j-2.0.1.jar，早期版本应该也是没问题的，不依赖mybatis和jdbc。
+依赖：依赖dom4j-2.0.1.jar，早期版本应该也是没问题的，and mysql JDBC Driver。
 1、目前仅支持mysql数据库，如果你用mybatis推荐使用。
 2、确保entitygenerator.properties和datatype.xml这两个文件置于项目包路径。
 3、根据你的项目修改上述两个文件，内有说明。
