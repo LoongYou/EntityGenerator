@@ -48,6 +48,9 @@ entityPackage=com/entity
 #实体字典类所在的包，根据此自动创建包(前后不要加“/”)
 dictPackage=com/dict/entity
 
+#字典类结尾
+dictEndWith=_D
+
 #是否自动执行，手动执行是通过控制可有更多操作
 auto=true
 
