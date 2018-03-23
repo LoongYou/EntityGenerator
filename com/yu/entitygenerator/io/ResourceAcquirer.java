@@ -31,6 +31,7 @@ public class ResourceAcquirer {
 	public static String projectRoot;
 	public static String entityPackage;
 	public static String dictPackage;
+	public static String dictEndWith;
 	public static String rootEntityPackage;
 	public static String rootDictPackage;
 	public static boolean auto;
@@ -63,6 +64,7 @@ public class ResourceAcquirer {
 			projectRoot = "/"+rb.getString("projectRoot")+"/"; 
 			rootEntityPackage = "/"+projectRoot+"/"+entityPackage+"/";
 			rootDictPackage = "/"+projectRoot+"/"+dictPackage+"/";
+			dictEndWith = rb.getString("dictEndWith");
 			auto = Boolean.valueOf(rb.getString("auto"));
 			cover = Boolean.valueOf(rb.getString("cover"));
 			fieldPreview = Boolean.valueOf(rb.getString("fieldPreview"));

@@ -123,7 +123,7 @@ public class MainExecutor {
 						boolean isCover = false;
 						if(sc.nextLine().equals("Y"))
 							isCover = true;
-						ts.writeType(eb.buildEnum(eb.getType(option)), option, isCover, true, ".java");						
+						ts.writeType(eb.buildEnum(eb.getType(option)), option+ResourceAcquirer.dictEndWith, isCover, true, ".java");						
 					}
 					
 				}else {
@@ -131,7 +131,7 @@ public class MainExecutor {
 					eb.buildEntityPackage();
 					for(String key:map.keySet()) {
 						//System.out.println(key);
-						ts.writeType(eb.buildEnum(eb.getType(key)), key, true, true, ".java");	
+						ts.writeType(eb.buildEnum(eb.getType(key)), key+ResourceAcquirer.dictEndWith, true, true, ".java");	
 					}
 				}
 			}catch(Exception e) {
