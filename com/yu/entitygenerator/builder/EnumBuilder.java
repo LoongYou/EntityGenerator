@@ -48,7 +48,7 @@ public class EnumBuilder {
 	 */
 	public String buildEnum(Class<?> c){
 		StringBuilder enumContent = new StringBuilder();
-		enumContent.append("public enum ").append(c.getSimpleName()+ResourceAcquirer.dictEndWith).append("{\n");
+		enumContent.append("public enum ").append(ResourceAcquirer.dictStartWith+c.getSimpleName()+ResourceAcquirer.dictEndWith).append("{\n");
 		enumContent.append("    \n");
 		String split = c.getSimpleName()+"\n    ,";
 		for(Field field:c.getDeclaredFields()) {
